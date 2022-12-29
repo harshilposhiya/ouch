@@ -1,0 +1,39 @@
+import java.util.*;
+
+public class Prac6
+{
+
+	public static void main(String[] args)
+	{
+		try
+		{
+			Scanner s = new Scanner(System.in);
+			String []num=new String[2];
+			int d;
+			for(int i=0;i<num.length;i++)
+			{
+				System.out.println("Enter "+(i+1)+" Value");
+				num[i] = s.next();
+			}
+			int a = Integer.parseInt(num[0]);
+			int b = Integer.parseInt(num[1]);
+			d=a/b;
+			System.out.println("Division= "+d);
+			num[2]=Integer.toString(d);
+		}
+		catch(ArrayIndexOutOfBoundsException e) {
+			System.out.println(e);
+
+		}
+		catch(NumberFormatException e) {
+			System.out.println(e);
+
+		}
+		catch(ArithmeticException ae) {
+			System.out.println("Cant divide by zero");
+			System.out.println(ae);
+		}
+
+	}
+
+}

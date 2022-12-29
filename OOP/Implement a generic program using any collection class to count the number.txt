@@ -1,0 +1,99 @@
+import java.util.List;
+import java.util.*;
+
+interface SomeSpecialNumber<T>
+{
+    public boolean match (T t);
+    
+}
+
+class PrimeNumber implements SomeSpecialNumber <Integer>
+{
+    public boolean match(Integer t)
+    {
+        for (int i=2; i<t; ++i)
+        {
+            if(t%i==0)
+            return false;
+        }
+        return true;
+    }
+}
+
+class EvenNumber implements SomeSpecialNumber <Integer>
+{
+    public boolean match(Integer t)
+    {
+        return (t%2==0);
+    }
+}
+class OddNumber implements SomeSpecialNumber <Integer>
+{
+    public boolean match(Integer t)
+    {
+        return (t%2!=0);
+    }
+}
+
+class Pallindrome implements SomeSpecialNumber <Integer>
+{
+    int x, temp;
+    public boolean match(Integer t)
+    {
+        while(t>0)
+        {
+            x=t%10;
+            t=t/10;
+            temp=temp*10+x;
+            
+        }
+        
+        if (temp==t)
+        {
+            System.out.println("Number is Pallindrome");
+        }
+        else
+        {
+             System.out.println("Number is not Pallindrome");
+        }
+		return false;
+        
+    }
+}
+
+class Algorithm
+{
+	public <T> int count(List<T> list, SomeSpecialNumber<T> s)
+	{
+		int count = 0;
+		for (T type : list)
+		{
+			if (s.match(type))
+			{
+				++count;
+			}
+		}
+		return count;
+	}
+}
+
+
+class Template
+{
+    public void testSpecificElement()
+    {
+        List<Integer> list = Arrays.asList(1,2,6,5,5,4);
+        
+        PrimeNumber pn=new PrimeNumber();
+        EvenNumber en= new EvenNumber();
+        OddNumber od= new OddNumber();
+        Pallindrome pa= new Pallindrome();
+        Algorithm a = new Algorithm();
+
+
+        System.out.println("Count of Prime Numbers:"+a.count(list,pn));
+        System.out.println("Count of even Numbers:"+a.count(list,en));
+        System.out.println("Count of odd Numbers:"+a.count(list,od));
+        System.out.println("Count of Pallindrome:"+a.count(list,pa));
+    }
+}

@@ -1,0 +1,58 @@
+abstract class Student
+{
+    abstract void getName(String name);
+    abstract void getMarks(float sscmark,float hscmark);
+   
+}
+class Harish extends Student
+{
+    public void getName(String name)
+    {
+       System.out.println("Name is:"+name);
+    }
+    public void getMarks(float sscmark,float hscmark)
+    {
+        System.out.println("SSC Marks is:"+sscmark);
+        System.out.println("HSC Marks is:"+hscmark);
+    }
+}
+class Jayant extends Student
+{
+    public void getName(String name)
+    {
+       System.out.println("Name is:"+name);
+    }
+    public void getMarks(float sscmark,float hscmark)
+    {
+        System.out.println("SSC Marks is:"+sscmark);
+        System.out.println("HSC Marks is:"+hscmark);
+    }
+}
+class Vijay extends Student
+{
+    public void getName(String name)
+    {
+       System.out.println("Name is:"+name);
+    }
+    public void getMarks(float sscmark,float hscmark)
+    {
+        System.out.println("SSC Marks is:"+sscmark);
+        System.out.println("HSC Marks is:"+hscmark);
+    }
+}
+class Main
+{
+    public static void main(String[] args)
+    {
+        Harish h=new Harish();
+        h.getName("Harish");
+        h.getMarks(45,54);
+        Jayant j=new Jayant();
+        j.getName("Jayant");
+        j.getMarks(67,76);
+        Vijay v=new Vijay();
+        v.getName("Vijay");
+        v.getMarks(89,98);
+        
+    }
+}

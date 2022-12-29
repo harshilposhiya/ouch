@@ -1,0 +1,59 @@
+import java.util.*;
+class Animal
+{
+    private String food;
+    private int legs;
+    private String foodtype;
+    public String skinColor="White";
+    public void setFood(String fd)
+    {
+        food=fd;
+    }
+    public String getFood()
+    {
+        return food;
+    }
+    public void setLegs(int lg)
+    {
+        legs=lg;
+    }
+    public int getLegs()
+    {
+        return legs;
+    }
+    public void setFoodType(String fdt)
+    {
+        foodtype=fdt;
+    }
+    public String getFoodType()
+    {
+        return foodtype;
+    }
+}
+class Cat extends Animal
+{
+    String skinColor;
+    String getSkinColor()
+    {
+        return super.skinColor;
+    }
+}
+class Main 
+{
+    public static void main(String[] args)
+    {
+       Scanner get=new Scanner(System.in);
+       Cat mau=new Cat();
+       mau.setFood("Milk");
+       System.out.println("Food:"+mau.getFood());
+       mau.setLegs(4);
+        System.out.println("No.legs: "+mau.getLegs());
+       mau.setFoodType("Veg");
+        System.out.println("Food Type:"
+       +mau.getFoodType());
+       
+       System.out.println("Skin Color:"
+       +mau.getSkinColor());
+       
+    }
+}

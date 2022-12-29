@@ -1,0 +1,52 @@
+interface OS
+{
+    void spec();
+}
+class Android implements OS
+{
+   public void spec()
+   {
+       System.out.println("Most Customable");
+   }
+}
+class IOS implements OS
+{
+    public void spec()
+    {
+        System.out.println("Most Expensive");
+    }
+}
+class  BlackBerry implements OS
+{
+    public void spec()
+    {
+        System.out.println("Most Secure");
+    }
+}
+class CreateFactory
+{
+    public OS getInstance(String str)
+    {
+       if(str.equals("Open"))
+       {
+        return new Android();
+       }
+        else if(str.equals("Costly"))
+       {
+        return new IOS();
+       }
+        else 
+       {
+        return new BlackBerry();
+       }
+    }
+}
+class Main
+{
+    public static void main(String[] args) 
+    {
+        CreateFactory c=new CreateFactory();
+        OS o=c.getInstance("Open");
+        o.spec();
+    }
+}
